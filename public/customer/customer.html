@@ -1,0 +1,7 @@
+<div class="Customer">
+    <span>{{ customer.name }}</span>
+    <span>{{ customer.product.name }}</span>
+    <span>{{ customer.joinedTime }}</span>
+    <button ng-if="customer.status !== 'served'" ng-click="remove()">Remove</button>
+    <button ng-if="customer.status !== 'served'" ng-click="serveCustomer()">Serve</button>
+</div>

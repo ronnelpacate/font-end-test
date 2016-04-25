@@ -1,0 +1,99 @@
+.customer-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+
+	ul {
+		padding: 0;
+	}
+
+	.AddCustomer {
+		background: #F2F1EF;
+		border-top: 5px solid #3fc380;
+		padding: 15px 10px;
+
+		input[type="text"] {
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border: 1px solid #D1D1D1;
+			padding: 6px 10px;
+			width: 30%;
+		}
+
+		select {
+		  padding: 6px 10px;
+		  background-color: #fff;
+		  border: 1px solid #D1D1D1;
+		  border-radius: 4px;
+		  -webkit-border-radius: 4px;
+		  -moz-border-radius: 4px;
+		  box-shadow: none;
+		  box-sizing: border-box; 
+		}
+	}
+
+	.add-customer {
+		background: transparent url(../images/add_green.png) scroll no-repeat left center;
+		color: #34495e;
+		padding: 2px 0px 2px 28px;
+	}
+
+	.title-header {
+		background: transparent url(../images/people.png) scroll no-repeat left center;
+		padding: 2px 0px 2px 28px;
+	}
+
+	.customer-list {
+		li {
+			border-bottom: 1px solid #d1d1d1;
+			clear: both;
+		    list-style: outside none none;
+		    display: block;
+		    height: 45px;
+		    padding: 8px 5px;
+		    width: 100%;
+
+		    customer {
+				span {
+					float: left;
+				    margin-right: 15px;
+				    width: 20%;
+				}
+
+				.queued-time {
+					font-size: 11px;
+				}
+			}
+		}
+	} 
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.button {
+	padding: 5px 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.green-btn {
+	background: #2ECC71;
+	border: 1px solid #26C281;
+	color: #fff;
+}
+
+.maroon-btn {
+	background: #E26A6A;
+	border: 1px solid #ccc;
+	color: #fff;
+}
+

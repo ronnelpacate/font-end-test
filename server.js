@@ -2,19 +2,16 @@ var http = require('http');
 var uuid =  require('node-uuid');
 var serveStatic = require('node-static');
 var fileServer = new serveStatic.Server('./public');
-var express = require('express')
-var bodyParser = require('body-parser')
-
+var express = require('express');
+var bodyParser = require('body-parser');
 
 var customers = [
     {name: 'William Shakespeare', product: {name:'Grammatical advice'}, id: uuid.v4(), joinedTime: new Date().toString()},
     {name: 'Sherlock Holmes', product: {name:'Magnifying glass repair'}, id: uuid.v4(), joinedTime: new Date().toString()},
     {name: 'Allan Turing', product: {name:'Cryptography advice'}, id: uuid.v4(), joinedTime: new Date().toString()},
-]
-
-var servedCustomers = [
-
 ];
+
+var servedCustomers = [];
 
 function serveCustomer(id){
     customers = customers.filter(function(customer){
@@ -39,7 +36,6 @@ function removeCustomer(targetCustomerId){
         return customer.id != targetCustomerId;
     })
 }
-
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -69,10 +65,12 @@ app.use(function (req, res) {
     req.addListener('end', function () {
         fileServer.serve(req, res);
     }).resume();
-})
+});
 
-app.listen(1337)
+app.listen(1337);
 console.log('Server is running @ 127.0.0.1:1337...');
 console.log('Good luck!');
+
+
 
 

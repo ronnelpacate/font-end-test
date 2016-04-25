@@ -1,6 +1,14 @@
 (function () {
     angular.module('qudini.QueueApp')
-        .directive('customer', Customer)
+        .directive('customer', Customer);
+
+    angular.module('qudini.QueueApp').filter('moment', function () {
+        return function (input, momentFn /*, param1, param2, ...param n */) {
+            var args = Array.prototype.slice.call(arguments, 2),
+                momentObj = moment(input);
+            return momentObj[momentFn].apply(momentObj, args);
+        };
+    });
 
     /**
      * The <customer> directive is responsible for:
@@ -20,11 +28,9 @@
             },
             templateUrl: '/customer/customer.html',
             link: function(scope){
-
-                // calculate how long the customer has queued for
-                scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
-
-                scope.remove = function(){
+                scope.queuedTime = new Date - new Date(scope.customer.joinedTime);
+                   
+                scope.remove = function() {
                     $http({
                         method: 'DELETE',
                         url: '/api/customer/remove',
@@ -44,5 +50,5 @@
         }
     }
 
-})()
+})();
 
